@@ -17,6 +17,8 @@ jobs:
           distribution: 'temurin'
       - name: Set up Gradle
         uses: gradle/gradle-build-action@v2.4.1
+        with:
+          cache-read-only: true
       - name: Run sanityCheck
         run: ./gradlew sanityCheck
         env:
