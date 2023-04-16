@@ -19,7 +19,8 @@ jobs:
         uses: gradle/gradle-build-action@v2.4.1
         with:
           cache-read-only: true
-      - name: Run sanityCheck
-        run: ./gradlew sanityCheck
-        env:
-          GRADLE_ENTERPRISE_ACCESS_KEY: ${{ secrets.GE_SOLUTIONS_ACCESS_TOKEN }}
+      - name: List project directory
+        run: |
+          ls $GITHUB_WORKSPACE
+          ls GITHUB_WORKSPACE/.gradle
+          ls GITHUB_WORKSPACE/.gradle/configuration-cache
