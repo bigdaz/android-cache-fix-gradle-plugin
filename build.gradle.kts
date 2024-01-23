@@ -3,6 +3,18 @@ import com.gradle.enterprise.gradleplugin.testselection.PredictiveTestSelectionP
 import com.gradle.enterprise.gradleplugin.testselection.PredictiveTestSelectionProfile.STANDARD
 import groovy.json.JsonSlurper
 
+// Upgrade dependencies required by plugins
+buildscript {
+    repositories {
+        gradlePluginPortal()
+    }
+    dependencies {
+        constraints {
+            classpath("com.squareup.okhttp3:okhttp:4.12.0")
+        }
+    }
+}
+
 plugins {
     id("groovy")
     id("java-gradle-plugin")
