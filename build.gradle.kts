@@ -61,6 +61,13 @@ dependencies {
     testImplementation("org.junit.jupiter:junit-jupiter-api")
 }
 
+// Override versions to address security alerts
+dependencies {
+    constraints {
+        testImplementation("org.bitbucket.b_c:jose4j:0.9.3")
+    }
+}
+
 wrapperUpgrade {
     gradle {
         create("android-cache-fix-gradle-plugin") {
